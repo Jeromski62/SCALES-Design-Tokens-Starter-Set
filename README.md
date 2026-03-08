@@ -1,15 +1,79 @@
-# Design tokens starter set for your design system
+# SCALES
 
-If you want to start with a token set for your design system but don't know how to proceed, this set can help.
+**A design token boilerplate for your design system.**
 
-This set is part of the "Design Tokens Starter Set" and primarily aims at design roles working with Figma. Find the related [free Figma-Library here](https://www.figma.com/community/file/1316042479653154791/design-tokens-starter-set-json-variables-tokens-studio-sync) and the JSON file was written with [Tokensstudio](https://tokens.studio/).
+SCALES gives you a production-ready, structured token set to build on — so you don't have to start from scratch. It is designed for design teams working with Figma and Token Studio, and is built around an X-tier architecture concept by Marco-Christian Krenn.
 
-With the release of v2.0.0 from Tokens Studio, the token set is now in W3C DTCG format and therefore compatible with tools like Zeroheight or similar.
+---
 
-## Note
+## What's inside
 
-As this is intended as a starter set, the repo does not contain any links to style dictionaries, for example.
+- A multi-brand token architecture with two example brands (brandA, brandB)
+- Light and dark mode support out of the box
+- A global dimension scale as the foundation for all size and spacing values
+- A full typescale with responsive-ready breakpoint structure
+- W3C DTCG-compliant token format — compatible with tools like Zeroheight, Style Dictionary, and others
+- Written for and managed with [Tokens Studio for Figma](https://tokens.studio/)
 
+---
 
-## Feedback Welcome!
-If you have any feedback or notice any issues, I would be grateful for any feedback!
+## Architecture
+
+SCALES is built on an X-tier model. Each tier has a clear responsibility:
+
+```
+scaling/factors    → global dimension scale (brand-independent)
+brand/[brandX]/*   → brand-specific primitives (color, font, shape)
+breakpoint/[bp]/*  → context tokens (dimension, typescale, border, grid, layout)
+mode/dark|light    → light and dark mode color mappings
+alias/*            → PUBLIC API — the only tier consumed by products
+```
+
+Only the `alias/` tier is released and consumed by products. All other tiers exist to keep the system scalable, maintainable, and brand-swappable.
+
+For a full breakdown see [ARCHITECTURE.md](./ARCHITECTURE.md) and [CONVENTIONS.md](./CONVENTIONS.md).
+
+---
+
+## Getting started
+
+1. Open the `tokens.json` file in [Tokens Studio for Figma](https://tokens.studio/)
+2. Explore the token structure and connect it to your Figma library
+3. Swap out `brand/brandA/*` with your own brand colors, fonts, and shapes
+4. Use the `alias/*` tokens in your components — these are your stable public API
+
+---
+
+## Working with AI agents
+
+SCALES ships with agent-readable documentation and executable skill files:
+
+- [`ARCHITECTURE.md`](./docs/ARCHITECTURE.md) — tier model, reference chains, token structure
+- [`CONVENTIONS.md`](./docs/CONVENTIONS.md) — naming, value formats, structural rules
+- [`AGENT-SETUP.md`](./docs/AGENT-SETUP.md) — how to set up an agent-assisted workflow
+- [`CLAUDE.md`](./CLAUDE.md) — instructions for Claude Code and compatible agents
+
+Any agent with access to these files has enough context to extend the token system correctly.
+
+The `skills/` folder contains step-by-step task guides that agents can execute:
+
+| Skill | Purpose |
+|-------|---------|
+| [`skills/validate.md`](./skills/validate.md) | Validate `tokens/tokens.json` against all conventions |
+| [`skills/add-brand.md`](./skills/add-brand.md) | Add a new brand to the system |
+| [`skills/add-color.md`](./skills/add-color.md) | Add a new palette color to an existing brand |
+| [`skills/add-breakpoint.md`](./skills/add-breakpoint.md) | Add a new breakpoint tier |
+
+---
+
+## Notes
+
+- This is a starter set — no Style Dictionary configuration or build pipeline is included
+- The `$themes` and `$metadata` sections in `tokens.json` are Figma/Token Studio configuration and should not be edited manually
+- Feedback and contributions are welcome — open an issue if you spot anything
+
+---
+
+## Feedback
+
+If you have any feedback or notice any issues, I would be grateful to hear from you.
