@@ -1,6 +1,6 @@
 # Working with Agents
 
-SCALES is designed to work alongside AI agents. This guide explains how to set up an agent-assisted workflow, either with or withoutFigma or Tokens Studio.
+SCALES is designed to work alongside AI agents. This guide explains how to set up an agent-assisted workflow, either with or without Figma or Tokens Studio.
 
 Agents do not replace Figma or Tokens Studio. Agents work on the JSON level and help you extend, validate, and maintain the token structure and speed up your work.
 
