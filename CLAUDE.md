@@ -66,13 +66,15 @@ Full documentation: ARCHITECTURE.md | CONVENTIONS.md
 
 ## Skills
 
-Executable skill files are located in `skills/`. Each skill guides an agent through a specific task:
+Skill files live in `skills/`. Each skill guides an agent through a specific task:
 
-| File | Purpose |
-|------|---------|
+| Skill | Purpose |
+|-------|---------|
 | `skills/validate.md` | Validate `tokens/tokens.json` against all conventions |
 | `skills/add-brand.md` | Add a new brand to the system |
 | `skills/add-color.md` | Add a new palette color to an existing brand |
 | `skills/add-breakpoint.md` | Add a new breakpoint tier |
 
-To invoke a skill, read the corresponding file and follow its steps.
+**Claude Code** — use slash commands: `/validate`, `/add-brand`, `/add-color`, `/add-breakpoint`
+
+**Other tools** — read the corresponding file and follow its steps.
