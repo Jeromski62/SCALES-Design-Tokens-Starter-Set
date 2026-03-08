@@ -55,7 +55,7 @@ SCALES ships with agent-readable documentation and executable skill files:
 
 Any agent with access to these files has enough context to extend the token system correctly.
 
-The `skills/` folder contains step-by-step task guides that agents can execute:
+The `skills/` folder contains step-by-step task guides that any agent or tool can execute — they are plain markdown, not tied to a specific tool. Point your agent at the relevant file and it has everything it needs to complete the task correctly.
 
 | Skill | Purpose |
 |-------|---------|
@@ -63,6 +63,8 @@ The `skills/` folder contains step-by-step task guides that agents can execute:
 | [`skills/add-brand.md`](./skills/add-brand.md) | Add a new brand to the system |
 | [`skills/add-color.md`](./skills/add-color.md) | Add a new palette color to an existing brand |
 | [`skills/add-breakpoint.md`](./skills/add-breakpoint.md) | Add a new breakpoint tier |
+
+If you use **Claude Code**, these skills are also available as slash commands: `/validate`, `/add-brand`, `/add-color`, `/add-breakpoint`.
 
 ---
 
