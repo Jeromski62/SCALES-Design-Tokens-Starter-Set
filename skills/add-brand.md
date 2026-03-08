@@ -21,8 +21,8 @@ Ask the user for:
    - Replace palette hex values with the new brand's colors
    - The palette must include all 8 color groups: `green`, `mint`, `blue`, `violet`, `red`, `orange`, `yellow`, `neutral`
    - Each group must include all steps: `50`, `100`, `200`, `300`, `400`, `500`, `600`, `700`, `800`, `900` (neutral also needs `950`)
-   - Map `brand.color.role.main.primary.*` to the primary color palette
-   - Map `brand.color.role.main.secondary.*` to the secondary color palette
+   - Under `brand.color.role.main.primary`, create the six semantic variants: `lightest`, `light`, `medium`, `strong`, `bold`, `dark` — each referencing an appropriate step from the primary palette (e.g. `light` → palette step 300, `bold` → step 700)
+   - Under `brand.color.role.main.secondary`, do the same using the secondary palette
    - Keep intent colors (`success`, `warning`, `critical`, `info`) mapped to the appropriate semantic palette colors (green, yellow, red, blue)
    - All hex values must be UPPERCASE
 
