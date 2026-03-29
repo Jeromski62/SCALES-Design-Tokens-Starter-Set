@@ -1,3 +1,10 @@
+---
+name: add-color
+description: Add a new palette color to an existing brand in the SCALES token system
+disable-model-invocation: true
+allowed-tools: Read, Edit
+---
+
 # Skill: add-color
 
 Add a new color to the palette of an existing brand.

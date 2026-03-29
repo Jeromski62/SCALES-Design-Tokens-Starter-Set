@@ -1,3 +1,10 @@
+---
+name: add-breakpoint
+description: Add a new breakpoint tier (dimension, typescale, border, grid, layout) to the SCALES token system
+disable-model-invocation: true
+allowed-tools: Read, Edit
+---
+
 # Skill: add-breakpoint
 
 Add a new breakpoint tier to the SCALES token system. Breakpoints define context-specific dimension, typescale, border, grid, and layout tokens.
