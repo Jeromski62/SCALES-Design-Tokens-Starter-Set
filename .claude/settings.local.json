@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node << 'EOF'\nconst fs = require\\('fs'\\);\nconst data = JSON.parse\\(fs.readFileSync\\('D:/02_Work/_Repos/scales/tokens/tokens.json', 'utf-8'\\)\\);\nconsole.log\\('Top-level keys:', Object.keys\\(data\\)\\);\nEOF)",
+      "Bash(cd \"D:\\\\02_Work\\\\_Repos\\\\scales\" && python -c \"\nimport json\nwith open\\('tokens/tokens.json'\\) as f:\n    data = json.load\\(f\\)\nkeys = list\\(data.keys\\(\\)\\)\nprint\\(keys\\)\n\")",
+      "Bash(cd \"D:/02_Work/_Repos/scales\" && python validate.py 2>&1)"
+    ]
+  }
+}
