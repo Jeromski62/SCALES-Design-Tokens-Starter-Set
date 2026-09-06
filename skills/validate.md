@@ -27,6 +27,8 @@ Validate `tokens/tokens.json` against all SCALES conventions. Run every check an
 
 10. **`$type: "number"` values** — must be numeric JSON values, not strings. E.g. `12` not `"12"`.
 
+11. **Alias usage clause** — every `$description` under an `alias/*` set must contain the separator `"; not for "` (see `docs/CONVENTIONS.md` → "Usage clause for `alias/*` tokens"). Report any `alias/*` token whose description is missing it, with its token path.
+
 ## Output
 
 Report each check with a clear pass ✅ or fail ❌ status. For failures, list every affected token path and the specific issue. At the end, summarize total issues found.

@@ -100,6 +100,20 @@ Every token must have a `$type`. No exceptions.
 - Be specific about the token's purpose, not its value
 - Use: `"background color for disabled elements"` not `"neutral.400"`
 
+### Usage clause for `alias/*` tokens
+
+`alias/*` is the only tier released to products (see `docs/ARCHITECTURE.md` → Tier 5), so every `alias/*` token's `$description` must also state its most likely misuse, using a single consistent separator:
+
+```
+"<purpose>; not for <most likely misuse>"
+```
+
+Example: `"background color for disabled elements; not for interactive or hover backgrounds"`
+
+This applies only to `alias/*` — `brand/`, `mode/`, and `breakpoint/` tokens are internal plumbing, not public API, and keep plain purpose-only descriptions. The consistent `"; not for "` separator keeps the clause mechanically checkable (see `skills/validate.md`) and easy for an agent to parse when picking a token.
+
+For token groups with real decision complexity (multiple similar-looking options, e.g. `alias.color.state.*` or `alias.font.headline.*`), the one-line clause is necessarily terse — the fuller comparison, with examples, lives in `docs/context/`. When adding a new `alias/*` token, add both the description clause and an entry in the matching `docs/context/` file.
+
 ---
 
 ## Structure Rules

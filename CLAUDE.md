@@ -24,6 +24,7 @@ SCALES is a design token boilerplate built around a brand-swappable, breakpoint-
 - `$description` values in lowercase with no trailing spaces
 - No compound tokens (a node cannot have both `$value` and non-`$` children)
 - Every token must have `$type`
+- `alias/*` `$description` values must include a `"; not for <misuse>"` clause (see CONVENTIONS.md → "Usage clause for `alias/*` tokens") — when adding a new `alias/*` token, also add/update the matching file in `docs/context/`
 
 ### When adding a new brand
 - Duplicate `brand/brandA/*` structure completely
@@ -78,3 +79,24 @@ Skill files live in `skills/`. Each skill guides an agent through a specific tas
 **Claude Code** — use slash commands: `/validate`, `/add-brand`, `/add-color`, `/add-breakpoint`
 
 **Other tools** — read the corresponding file and follow its steps.
+
+## Context files
+
+Passive reference docs (not invoked like skills) explaining what each `alias/*` token group is allowed and not allowed to be used for, with examples. Read the relevant file before wiring up `alias/*` tokens in a component.
+
+| File | Covers |
+|------|--------|
+| `docs/context/color/interaction.md` | `alias.color.primary.*`, `alias.color.secondary.*` |
+| `docs/context/color/intent.md` | `alias.color.intent.*` |
+| `docs/context/color/background.md` | `alias.color.background.*` |
+| `docs/context/color/text.md` | `alias.color.text.*` |
+| `docs/context/color/state.md` | `alias.color.state.*` |
+| `docs/context/color/border.md` | `alias.color.border.*` |
+| `docs/context/typography/display.md` | `alias.font.display.*` |
+| `docs/context/typography/headlines.md` | `alias.font.headline.*` |
+| `docs/context/typography/labels.md` | `alias.font.label.*` |
+| `docs/context/typography/body.md` | `alias.font.body.*` |
+| `docs/context/typography/hyperlinks.md` | `alias.font.hyperlink.*` |
+| `docs/context/typography/code.md` | `alias.font.code.*` |
+| `docs/context/border.md` | `alias.borderWidth.*`, `alias.radius.*`, `alias.border.focusOutline` |
+| `docs/context/dimension.md` | `alias.size.*`, `alias.space.*`, `alias.grid.*`, `alias.screen.*` |
